@@ -1,0 +1,11 @@
+<Link
+                component="button"
+                variant="body2"
+                onClick={() => {
+                    return (
+                        <Redirect to='/register'/>
+                    );
+                }}
+                >
+                Sign up
+              </Link>
