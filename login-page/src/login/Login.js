@@ -56,7 +56,7 @@ const Login = () => {
                     <Link href='#'>Forgot Password</Link>
               </Typography>
               <Typography>Do you have an account?
-                    <Link href='#'>Sign up</Link>
+                    <Link href='./register.js'>Sign up</Link>
               </Typography>
         </Paper>
         </Grid>
