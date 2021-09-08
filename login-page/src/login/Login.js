@@ -1,17 +1,14 @@
 import React from "react";
+import{ Grid, Paper} from '@material-ui/core';
 
 
-class Login extends React.Component {
+const Login = () => {
 
-    constructor(props){
-        super(props);
-        this.state = {};
-    }
-
-    render() {
-
-        return <div>Hello World!</div>;
-    }
+    return (
+        <Grid>
+            <Paper>
+Sign in
+            </Paper>
+        </Grid>
+    )
 }
-
-export default Login;
