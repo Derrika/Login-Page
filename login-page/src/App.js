@@ -1,19 +1,16 @@
 import "./App.css";
-import Login from "./login/Login";
-import Register from './login/register';
-import {BrowserRouter, Route} from 'react-router-dom'
+import Main from './login/main';
+
+
 
 function App() {
   return (
-   <BrowserRouter>
-      <div className="App">
-      <Route>
-        <Login />
-      </Route>
+    <div className="App">
+      <h1>Derr's App</h1>
+        <Main/>
         
-        <Register/>
     </div>
-   </BrowserRouter>
+   
   );
 }
 
