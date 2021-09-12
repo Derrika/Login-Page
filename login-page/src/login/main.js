@@ -3,12 +3,14 @@ import {Switch, Route} from 'react-router-dom';
 
 import Login from "./Login";
 import Register from './register';
+import Homepage from '../Homepage/homepage';
 
 const Main = () => {
 
     return (
         
         <Switch>
+            <Route exact path="/" component={Homepage}></Route>
             <Route exact path="/Login" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
         </Switch>

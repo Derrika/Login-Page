@@ -1,13 +1,15 @@
-import { Container, Grid } from "@material-ui/core/Container";
+import { Button, Container, Grid, Paper } from "@material-ui/core";
 import React from "react";
 
 
 const homepage = () => {
     return (
-
         <Container fixed>
             <Grid>
-                <h1>DSC Software Development Limited</h1>
+                <Paper elevation={5}>
+                    <h1>DSC Software Development Limited</h1>
+                    <Button><a href="./homepage">Login</a></Button>
+                </Paper>
             </Grid>
         </Container>
     );
