@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import Login from "./Login";
 import Register from './register';
 import Homepage from '../Homepage/homepage';
+import Blog from "../Homepage/Blog";
 
 const Main = () => {
 
@@ -13,6 +14,7 @@ const Main = () => {
             <Route exact path="/" component={Homepage}></Route>
             <Route exact path="/Login" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
+            <Route exact path="../Homepage/Blog" component={Blog}></Route>
         </Switch>
     );
 }

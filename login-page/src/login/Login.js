@@ -36,6 +36,7 @@ const Login = () => {
     // Validate form using Formik Yup 
     const validationSchema= Yup.object().shape({
         username:Yup.string().email().required('Please enter valid email.'),
+        //password:Yup.string().password(),
     })
 
 
