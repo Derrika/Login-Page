@@ -94,7 +94,7 @@ const Login = () => {
                     <Link href='#'>Forgot Password</Link>
               </Typography>
               <Typography>Do you have an account?
-                    <Link href='./register.js'>
+                    <Link href='./register'>
                         Sign up
                     </Link>
               </Typography>

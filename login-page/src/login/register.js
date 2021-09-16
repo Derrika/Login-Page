@@ -8,6 +8,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
+import { Formik, Field, Form } from "formik";
+
 
 const Register = () => {
 
@@ -46,6 +48,16 @@ const Register = () => {
         setValues({...values, [name]: value });
     }
 
+    const initialValues = {
+        name:'',
+        email: '',
+        gender: '',
+        phoneNumber: '',
+        password: '',
+        confirmPassword: '',
+        termsAndConditions: false,
+    }
+
     return (
         <Grid>
         <Paper elevation={20} style={paperStyle}>
@@ -56,30 +68,35 @@ const Register = () => {
                 <h2 style={headerStyle}>Register</h2>
                 <Typography variant='caption' gutterBottom>Please complete this form to create an account.</Typography>
             </Grid>
-            <form>
-                <TextField label='Name' variant='standard' fullWidth/>
-                <TextField label='Email' variant='standard' fullWidth/>
-
-                <FormControl component="fieldset" style={marginTop
-                }>
-                    <FormLabel component="legend">Gender</FormLabel>
-                    <RadioGroup aria-label="gender" name="gender" style={{display:'initial'}} onChange={handleChange}>
-                        <FormControlLabel value="female" control={<Radio />} label="Female" />
-                        <FormControlLabel value="male" control={<Radio />} label="Male" />
-                        <FormControlLabel value="other" control={<Radio />} label="Other" />
-                    </RadioGroup>
-                </FormControl>
-
-                <TextField label='Contact' variant='standard' fullWidth/>
-                <TextField label='password' variant='standard' fullWidth/>
-                <TextField label='Confirm Password' variant='standard' fullWidth/>
-
-                <FormControlLabel
-                    control={<Checkbox onChange={handleChange} name="checkedA" />}
-                    label="I accept the terms and conditions."
-                />
-                <Button type='submit' variant='contained' color='primary' style={btnStyle}>Register</Button>
-            </form>
+            <Formik initialValues={initialValues}>
+                {(props) => (
+                        <Form>
+                            <Field as={TextField} label='Name' name='name' variant='standard' fullWidth/>
+                            <Field as={TextField} label='Email' name='email' variant='standard' fullWidth/>
+            
+                            <FormControl component="fieldset" style={marginTop
+                            }>
+                                <FormLabel component="legend">Gender</FormLabel>
+                                <Field as={RadioGroup} aria-label="gender" name="gender" name="gender" style={{display:'initial'}} onChange={handleChange}>
+                                    <FormControlLabel value="female" control={<Radio />} label="Female" />
+                                    <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                    <FormControlLabel value="other" control={<Radio />} label="Other" />
+                                </Field>
+                            </FormControl>
+            
+                            <Field as={TextField} label='Contact' name='phoneNumber' variant='standard' fullWidth/>
+                            <Field as={TextField} label='password' name='password' variant='standard' fullWidth/>
+                            <Field as={TextField} label='Confirm Password' name='confirmPassword' variant='standard' fullWidth/>
+            
+                            <FormControlLabel
+                                control={<Field as={Checkbox} name='termsAndConditions' onChange={handleChange}/>}
+                                label="I accept the terms and conditions."
+                            />
+                            <Button type='submit' variant='contained' color='primary' style={btnStyle}>Register</Button>
+                        </Form>
+                    )
+                }
+            </Formik>
         </Paper>
     </Grid>
     );
